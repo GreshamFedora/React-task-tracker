@@ -26,12 +26,16 @@ function App() {
     },
 ])
 
-  const name = 'Maak'
+// Delete Task
+const deleteTask = (id) => {
+  console.log('delete', id)
+}
+
   return (
     <div className="container">
         
         <Header title = "daBomb is garbage sauce"/>
-        <Tasks tasks={tasks}/>
+        <Tasks tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 }
