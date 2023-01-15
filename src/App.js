@@ -1,7 +1,7 @@
-import Header from './components/Header'
-import Exp from './components/Exp'
-import Tasks from './components/Tasks'
 import { useState } from "react"
+import Header from './components/Header'
+import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 
 
 function App() {
@@ -31,11 +31,19 @@ const deleteTask = (id) => {
   setTasks(tasks.filter((task) => task.id !== id))
 }
 
+// Toggle Reminder
+const toggleReminder = (id) => {
+  setTasks(
+    tasks.map((task) => 
+    task.id === id ? {...task, reminder: !task.reminder} : task))
+}
+
   return (
     <div className="container">
         
-        <Header title = "daBomb is garbage sauce"/>
-        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} /> : 'No tasks to display'}
+        <Header title = "Task Tracker"/>
+        <AddTask />
+        {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No tasks to display'}
     </div>
   );
 }
