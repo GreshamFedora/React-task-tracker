@@ -32,7 +32,7 @@ const onSubmit = (e) => {
         </div>
         <div className="form-control form-control-check">
             <label>Set Reminder</label>
-            <input type='checkbox' checked={reminder} value={reminder} onChange={(e) => setReminder(e.currentTarget.checked)}></input>
+            <input type='checkbox' checked={reminder ? true : false} value={reminder} onChange={(e) => setReminder(e.currentTarget.checked)}></input>
         </div>
 
         <input type='submit' value='Save Task' className="btn btn-clock" />
