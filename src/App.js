@@ -7,7 +7,7 @@ import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
 
-//TODO: 20230117 adapt to REST backend and replace json
+//TODO: 20230117 adapt to REST backend and replace json server
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
