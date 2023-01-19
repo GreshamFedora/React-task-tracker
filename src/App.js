@@ -7,7 +7,7 @@ import AddTask from './components/AddTask'
 import Footer from './components/Footer'
 import About from './components/About'
 
-//TODO: 20230117 adapt to REST backend and replace json server
+// TODO: 20230117 adapt to REST backend and replace json server
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -23,7 +23,7 @@ useEffect(() => {
   getTasks()
 },[])
 
-// Fetch Tasks from back end -- this was return 2x
+// Fetch Tasks from back end -- this was returning 2x
 const fetchTasks = async () => {
   const res = await fetch('http://localhost:5000/tasks')
   const data = await res.json()
@@ -31,7 +31,7 @@ const fetchTasks = async () => {
   return data
 }
 
-// this one updates reminder toggle --> back end
+// updates reminder toggle --> back end
 const fetchTask = async (id) => {
   const res = await fetch(`http://localhost:5000/tasks/${id}`)
   const data = await res.json()
@@ -111,9 +111,12 @@ const toggleReminder = async (id) => {
           )} />
           <Route path='/about' component={About} />
           <Footer />
+          
       </div>
     </Router>
   );
 }
 
 export default App;
+
+
